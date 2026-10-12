@@ -11,3 +11,5 @@ __pycache__/
 .env
 .env.*
 *.Xauthority
+
+/README_DOCKER.md
