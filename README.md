@@ -1,7 +1,5 @@
 # TurtleBot 4 — Ubuntu 22.04 / ROS 2 Humble
 
-Yêu cầu: đã cài ROS 2 Humble và driver NVIDIA (launch hiện dùng NVIDIA).
-
 ## 1. Cài đặt và build
 
 ```bash
@@ -20,9 +18,7 @@ rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
 colcon build --symlink-install
 ```
 
-Dependency simulator: [TurtleBot 4 Humble](https://turtlebot.github.io/turtlebot4-user-manual/software/turtlebot4_simulator.html).
-
-Trong **mỗi terminal mới**, chạy trước:
+Terminal 1:
 
 ```bash
 cd ~/simple_turtlebot4
@@ -44,8 +40,6 @@ Terminal 2 undock, đợi `SUCCEEDED`, rồi chạy teleop:
 ros2 action send_goal /undock irobot_create_msgs/action/Undock '{}'
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p speed:=0.3 -p turn:=0.5
 ```
-
-`i`: tiến; `j`/`l`: quay; `k`: dừng. Theo dõi `/map` trong RViz.
 
 Thoát teleop bằng Ctrl+C, giữ SLAM chạy rồi lưu map (ghi đè map chính):
 
